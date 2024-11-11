@@ -4,19 +4,18 @@
 //
 //  Created by Terrance Davis on 11/11/24.
 //
+import SwiftUI
 
-import Foundation
-
-protocol SpacetimePoint {
-    var x: Double { get set }
-    var y: Double { get set }
-    var z: Double { get set }
-    var t: Double { get set }
-}
-
-struct SpacetimePoint3D: SpacetimePoint {
+struct SpacetimePoint {
     var x: Double
     var y: Double
     var z: Double
-    var t: Double
+    var t: Double // Time component
+
+    func distance(to other: SpacetimePoint) -> Double {
+        let dx = x - other.x
+        let dy = y - other.y
+        let dz = z - other.z
+        return sqrt(dx * dx + dy * dy + dz * dz)
+    }
 }

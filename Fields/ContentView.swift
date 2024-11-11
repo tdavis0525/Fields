@@ -15,14 +15,17 @@ struct ContentView: View {
         VStack {
             Text("Simulation")
                 .font(.largeTitle)
-            
-            // Display the particle's position (replace with visual representation)
+
             Text("Particle Position: \(particle.position.x), \(particle.position.y), \(particle.position.z)")
         }
         .onAppear {
-            // Start your simulation loop here
-            // ...
-            // Update particle state, notify observers
+            // Start your simulation loop here (update the particle and notify observers)
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+                particle = particle.update(field: electronField)
+                
+                // Notify observers
+                NotificationCenter.default.post(name: Notification.Name("ParticleMoved"), object: nil, userInfo: ["particle": particle])
+            }
         }
     }
 }

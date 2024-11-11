@@ -39,6 +39,7 @@
 				Observers/FieldGridView.swift,
 				Observers/MeasurementObserver.swift,
 				Observers/Observer.swift,
+				Observers/SimulationEvent.swift,
 				Observers/StatisticsObserver.swift,
 			);
 			target = 5D73020A2CE2A99800F7A8CB /* Fields */;
