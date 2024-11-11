@@ -34,7 +34,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Models/ElectronField.swift,
+				Models/PhotonField.swift,
 				Models/ProtonField.swift,
+				Observers/FieldGridView.swift,
 				Observers/MeasurementObserver.swift,
 				Observers/Observer.swift,
 				Observers/StatisticsObserver.swift,
