@@ -1,0 +1,23 @@
+FieldOfDreamers/
+├── FieldOfDreamers/
+│   ├── Models/
+│   │   ├── QuantumField.swift
+│   │   ├── SpacetimePoint.swift
+│   │   ├── ParticleProperties.swift
+│   │   ├── ParticleField.swift  // Added base class
+│   │   ├── ElectronField.swift
+│   │   ├── ProtonField.swift   // Stub
+│   │   ├── NeutronField.swift  // Stub
+│   │   ├── PhotonField.swift   // Stub
+│   │   └── NeutrinoField.swift  // Stub
+│   ├── Observers/
+│   │   ├── Observer.swift
+│   │   ├── MeasurementObserver.swift // Stub
+│   │   └── StatisticsObserver.swift  // Stub
+│   ├── Views/
+│   │   ├── FieldGridView.swift  // Stub
+│   │   └── ParticleView.swift   // Stub
+│   └── ContentView.swift
+├── FieldOfDreamersTests/
+│   └── FieldOfDreamersTests.swift
+└── README.md

@@ -29,9 +29,26 @@
 		5D7302262CE2A99C00F7A8CB /* FieldsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5D7302492CE2B40E00F7A8CB /* Exceptions for "Fields" folder in "Fields" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/ElectronField.swift,
+				Models/ProtonField.swift,
+				Observers/MeasurementObserver.swift,
+				Observers/Observer.swift,
+				Observers/StatisticsObserver.swift,
+			);
+			target = 5D73020A2CE2A99800F7A8CB /* Fields */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5D73020D2CE2A99800F7A8CB /* Fields */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5D7302492CE2B40E00F7A8CB /* Exceptions for "Fields" folder in "Fields" target */,
+			);
 			path = Fields;
 			sourceTree = "<group>";
 		};
