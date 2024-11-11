@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var electronField = ElectronField()
+    @State private var particle: Particle = Particle(position: SpacetimePoint(x: 0, y: 0, z: 0, t: 0), velocity: Vector(x: 0, y: 0, z: 0), properties: ParticleProperties(mass: 9.109e-31, charge: -1.602e-19))
+    @State private var electronField: ElectronField = ElectronField(charge: -1.602e-19, permittivity: 8.854e-12)
 
     var body: some View {
         VStack {
-            // ... your UI elements (using FieldGridView, ParticleView, etc.)
-
-            Button("Create Electron") {
-                let location = SpacetimePoint3D(x: 0, y: 0, z: 0, t: 0) // Example location
-                let properties = ElectronProperties()
-                electronField.createParticle(at: location, with: properties)
-            }
+            Text("Simulation")
+                .font(.largeTitle)
+            
+            // Display the particle's position (replace with visual representation)
+            Text("Particle Position: \(particle.position.x), \(particle.position.y), \(particle.position.z)")
+        }
+        .onAppear {
+            // Start your simulation loop here
+            // ...
+            // Update particle state, notify observers
         }
     }
 }
-#Preview {
-    ContentView()
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

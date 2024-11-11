@@ -15,6 +15,8 @@ class ParticleField: QuantumField {
 
     init() {} // Initialize an empty field
 
+    func force(at point: SpacetimePoint) -> Vector // Calculate force at a point
+    
     func value(at location: SpacetimePoint) -> FieldValue {
         return fieldValues[location] ?? .zero // Return 0 if no value at that point
     }
@@ -48,4 +50,5 @@ class ParticleField: QuantumField {
         // Logic to annihilate a particle in the field
         fatalError("Must be implemented by subclasses")
     }
+    
 }
