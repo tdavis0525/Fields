@@ -5,7 +5,7 @@
 //  Created by Terrance Davis on 11/11/24.
 //
 
-iimport SwiftUI
+import SwiftUI
 
 struct Particle {
     var position: SpacetimePoint

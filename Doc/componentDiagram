@@ -1,0 +1,28 @@
+componentDiagram
+    component FieldOfDreamers {
+        Models
+        Observers
+        Views
+    }
+
+    package Models {
+        QuantumField
+        ParticleField
+        ElectronField
+        ProtonField
+        NeutronField
+        PhotonField
+        SpacetimePoint
+        ParticleProperties
+    }
+
+    package Observers {
+        Observer
+        MeasurementObserver
+        StatisticsObserver
+    }
+
+    package Views {
+        FieldGridView
+        ParticleView
+    }

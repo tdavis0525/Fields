@@ -1,0 +1,100 @@
+classDiagram
+    class QuantumField {
+        <<protocol>>
+        +value(at: SpacetimePoint) FieldValue
+        +registerObserver(observer: Observer)
+        +notifyObservers(of: Event)
+    }
+
+    class ParticleField {
+        -fieldValues: [SpacetimePoint: FieldValue]
+        -observers: [Observer]
+        +value(at: SpacetimePoint) FieldValue
+        +registerObserver(observer: Observer)
+        +notifyObservers(of: Event)
+        +updateField(with: Event)
+        +createParticle(at: SpacetimePoint, with: ParticleProperties)
+        +annihilateParticle(at: SpacetimePoint)
+    }
+
+    class ElectronField {
+        +updateField(with: Event)
+        +createParticle(at: SpacetimePoint, with: ParticleProperties)
+        +annihilateParticle(at: SpacetimePoint)
+    }
+
+    class ProtonField {
+        +updateField(with: Event)
+        +createParticle(at: SpacetimePoint, with: ParticleProperties)
+        +annihilateParticle(at: SpacetimePoint)
+    }
+
+    class NeutronField {
+        +updateField(with: Event)
+        +createParticle(at: SpacetimePoint, with: ParticleProperties)
+        +annihilateParticle(at: SpacetimePoint)
+    }
+
+    class PhotonField {
+        +updateField(with: Event)
+        +createParticle(at: SpacetimePoint, with: ParticleProperties)
+        +annihilateParticle(at: SpacetimePoint)
+    }
+
+    QuantumField <|.. ParticleField
+    ParticleField <|-- ElectronField
+    ParticleField <|-- ProtonField
+    ParticleField <|-- NeutronField
+    ParticleField <|-- PhotonField
+
+    class Observer {
+        <<protocol>>
+        +onEvent(event: QuantumField.Event)
+    }
+
+    class MeasurementObserver {
+        +onEvent(event: QuantumField.Event)
+    }
+
+    class StatisticsObserver {
+        +onEvent(event: QuantumField.Event)
+    }
+
+    Observer <|-- MeasurementObserver
+    Observer <|-- StatisticsObserver
+
+    class ParticleProperties {
+        <<protocol>>
+        +mass: Double
+        +charge: Double
+        +spin: Double
+    }
+
+    class ElectronProperties {
+        +mass: Double
+        +charge: Double
+        +spin: Double
+    }
+
+    class ProtonProperties {
+        +mass: Double
+        +charge: Double
+        +spin: Double
+    }
+
+    class NeutronProperties {
+        +mass: Double
+        +charge: Double
+        +spin: Double
+    }
+
+    class PhotonProperties {
+        +mass: Double
+        +charge: Double
+        +spin: Double
+    }
+
+    ParticleProperties <|-- ElectronProperties
+    ParticleProperties <|-- ProtonProperties
+    ParticleProperties <|-- NeutronProperties
+    ParticleProperties <|-- PhotonProperties

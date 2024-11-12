@@ -51,4 +51,17 @@ class ParticleField: QuantumField {
         fatalError("Must be implemented by subclasses")
     }
     
+    func applyOperator(_ operator: any Operator<Self>, at location: SpacetimePoint) {
+            // Apply the operator to the field
+            let newField = `operator`.apply(to: self, at: location)
+
+            // Update the field values
+            self.fieldValues = newField.fieldValues
+
+            // Notify observers of the change
+            // (Assuming you have a .fieldUpdated event in your QuantumField.Event enum)
+            notifyObservers(of: .fieldUpdated(at: location))
+        }
+
+    
 }

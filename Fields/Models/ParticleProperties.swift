@@ -4,13 +4,19 @@
 //
 //  Created by Terrance Davis on 11/11/24.
 //
+
+
 protocol ParticleProperties {
     var mass: Double { get }
     var charge: Double { get }
     var spin: Double { get }
     // ... other properties
+    
+    init(mass: Double, charge: Double) {
+        self.mass = mass
+        self.charge = charge
+    }
 }
-
 struct ElectronProperties: ParticleProperties {
     let mass: Double = 9.1093837e-31 // kg
     let charge: Double = -1.60217663e-19 // Coulombs

@@ -1,0 +1,14 @@
+objectDiagram
+    electronField: ElectronField
+    observer1: MeasurementObserver
+    observer2: StatisticsObserver
+    location: SpacetimePoint3D
+    properties: ElectronProperties
+
+    electronField --> observer1 : registerObserver()
+    electronField --> observer2 : registerObserver()
+    electronField --|> QuantumField
+    observer1 --|> Observer
+    observer2 --|> Observer
+    electronField --> location : createParticle(at:with:)
+    properties --> electronField : createParticle(at:with:)
